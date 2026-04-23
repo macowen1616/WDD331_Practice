@@ -2,7 +2,7 @@
 
 **Student:** Makay Crandall  
 **Semester:** Spring 2026  
-**Live Site:** [View Site](https://github.com/macowen1616/WDD331_Practice.git)
+**Live Site:** [View Site](https://macowen1616.github.io/WDD331_Practice/)
 
 ## About
 This repository is my Practice Site for WDD 331R: Advanced CSS.  
