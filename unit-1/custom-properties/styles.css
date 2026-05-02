@@ -1,0 +1,137 @@
+:root {
+    --color-primary: #2563eb;
+    --color-accent: #22c55e;
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-text: #1e293b;
+    --color-muted: #64748b;
+
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+
+    --font-base: system-ui, sans-serif;
+    --font-size-base: 1rem;
+
+    --radius: 0.75rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-base);
+    font-size: var(--font-size-base);
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+
+    padding: clamp(1rem, 3vw, 3rem);
+
+    a {
+        color: var(--color-primary);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--color-accent);
+        }
+    }
+}
+
+.site-nav {
+    margin-bottom: var(--space-lg);
+
+    a {
+        font-weight: 600;
+    }
+}
+
+.board-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+
+    h1 {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    p {
+        color: var(--color-muted);
+        margin-top: var(--space-sm);
+    }
+}
+
+.card-group {
+    margin-bottom: var(--space-lg);
+
+    h2 {
+        margin-bottom: var(--space-md);
+        font-size: 1.5rem;
+    }
+}
+
+.cards {
+    display: grid;
+    gap: calc(var(--space-md) * 1.5);
+
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+    background: var(--color-surface, #fff);
+    padding: var(--space-md);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+
+    .card-tag {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        background: var(--color-accent);
+        color: white;
+        border-radius: var(--radius);
+        width: fit-content;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        color: var(--color-muted);
+        font-size: 0.9rem;
+    }
+
+    .card-meta {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            font-size: 0.8rem;
+            color: var(--color-muted);
+        }
+
+        a {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    }
+}
+
+.board-footer {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    text-align: center;
+    color: var(--color-muted);
+
+    border-top: 1px solid var(--color-muted);
+}
