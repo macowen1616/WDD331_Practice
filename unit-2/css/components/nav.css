@@ -1,4 +1,22 @@
-/* Navigation component: .site-nav and its links
-   Style the active link using aria-current. */
+.nav {
+  display: flex;
+  gap: var(--space-md);
+}
 
-/* TODO: Style the navigation */
+.nav a {
+  text-decoration: none;
+  color: var(--color-text);
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+  }
+}
+
+/* :not() usage */
+.nav a:not(.active) {
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
+}

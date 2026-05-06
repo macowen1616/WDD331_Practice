@@ -1,4 +1,11 @@
-/* Card components: .card-group, .cards grid, .card, .card-tag, .card-footer
-   Use native nesting. Reference tokens with var(). */
+.cards {
+  display: grid;
+  gap: clamp(var(--space-sm), 2vw, var(--space-lg));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
 
-/* TODO: Style the card components */
+.card {
+  background: white;
+  padding: clamp(var(--space-md), 3vw, var(--space-lg));
+  border-radius: var(--radius);
+}
