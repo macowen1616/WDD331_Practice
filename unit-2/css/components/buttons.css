@@ -1,24 +1,27 @@
-button {
-  background: var(--color-primary);
-  color: white;
+.btn {
   padding: var(--space-sm) var(--space-md);
-  border: none;
   border-radius: var(--radius);
-
-  &:hover {
-    background: var(--color-accent);
-  }
-
-  &:focus-visible {
-    outline: 3px solid var(--color-accent);
-  }
-
-  &:disabled {
-    opacity: 0.5;
-  }
+  border: none;
 }
 
-/* :not() requirement */
-button:not(:disabled) {
+.primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.secondary {
+  background: #e5e7eb;
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-accent);
+}
+
+/* :not() */
+.btn:not(:disabled) {
   cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.5;
 }

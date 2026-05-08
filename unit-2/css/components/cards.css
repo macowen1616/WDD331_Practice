@@ -9,3 +9,9 @@
   padding: clamp(var(--space-md), 3vw, var(--space-lg));
   border-radius: var(--radius);
 }
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-md);
+}

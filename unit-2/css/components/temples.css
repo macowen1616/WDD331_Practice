@@ -1,5 +1,10 @@
-.temple {
-  padding: var(--space-md);
-  border-radius: var(--radius);
-  background: white;
+.temples {
+  list-style: none;
+  padding: 0;
+}
+
+.temples li {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-sm) 0;
 }
