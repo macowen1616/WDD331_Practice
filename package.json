@@ -1,0 +1,24 @@
+{
+  "name": "wdd331",
+  "version": "1.0.0",
+  "description": "**Student:** Makay Crandall  \r **Semester:** Spring 2026  \r **Live Site:** [View Site](https://macowen1616.github.io/WDD331_Practice/)",
+  "main": "index.js",
+  "scripts": {
+    "build": "lightningcss css/main.css -o dist/styles.css --minify",
+    "watch": "lightningcss css/main.css -o dist/styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macowen1616/WDD331_Practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/macowen1616/WDD331_Practice/issues"
+  },
+  "homepage": "https://github.com/macowen1616/WDD331_Practice#readme",
+  "dependencies": {
+    "lightningcss-cli": "^1.32.0"
+  }
+}
