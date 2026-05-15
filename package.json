@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "lightningcss css/main.css -o dist/styles.css --minify",
-    "watch": "lightningcss css/main.css -o dist/styles.css --watch"
+    "watch": "chokidar \"css/**/*.css\" -c \"npm run build\""
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "homepage": "https://github.com/macowen1616/WDD331_Practice#readme",
   "dependencies": {
     "lightningcss-cli": "^1.32.0"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0"
   }
 }

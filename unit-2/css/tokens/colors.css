@@ -1,9 +1,8 @@
-:root {
-  --color-primary: #2563eb;
-  --color-background: #f9fafb;
-  --color-surface: #ffffff;       /* cards, sections */
-  --color-text: #111827;
-  --color-text-muted: #6b7280;    /* secondary text */
-  --color-accent: #f59e0b;
-  --color-border: #e5e7eb;        /* inputs, dividers */
+@layer tokens {
+  :root {
+    --color-primary: #2563eb;
+    --color-accent: #004f7f;        /* This fixes your &:hover and &:focus-visible */
+    --color-bg: #f8fafc;            /* This matches background-color: var(--color-bg) */
+    --color-text: #0f172a;          /* This matches color: var(--color-text) */
+  }
 }
