@@ -1,44 +1,21 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* css/main.css */
 
-:root {
-    --color-bg: #f4f6f8;
-    --color-text: #1e293b;
-    --color-primary: #006eb6;
-    --color-primary-hover: #004f7f;
+/* Define your cascade layers */
+@layer tokens, base, layout, components, utilities;
 
-    --space-sm: 0.5rem;
-    --space-md: 1rem;
-    --space-lg: 2rem;
+/* Import all of your beautifully organized layer files */
+@import "tokens/variables.css" layer(tokens);
+@import "tokens/colors.css" layer(tokens);
 
-    --font-body: system-ui, -apple-system, sans-serif;
-}
+@import "base/reset.css" layer(base);
+@import "base/elements.css" layer(base);
 
-body {
-    font-family: var(--font-body);
-    color: var(--color-text);
-    background-color: var(--color-bg);
-    line-height: 1.6;
-    padding: var(--space-lg);
-}
+@import "layout/primary.css" layer(layout);
 
-h1 {
-    margin-bottom: var(--space-md);
-}
+@import "components/nav.css" layer(components);
+@import "components/buttons.css" layer(components);
+@import "components/cards.css" layer(components);
+@import "components/forms.css" layer(components);
+@import "components/temples.css" layer(components);
 
-p {
-    max-width: 600px;
-}
-
-a {
-    color: var(--color-primary);
-}
-
-a:hover {
-    color: var(--color-primary-hover);
-}
+@import "utilities/utilities.css" layer(utilities);

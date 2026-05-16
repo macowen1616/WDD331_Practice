@@ -3,33 +3,40 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makay Crandall – Practice Site</title>
-    <link rel="stylesheet" href="css/main.css">
-
-<nav>
-    <h2>Assignments</h2>
-    <ul>
-        <li>
-            <a href="unit-1/custom-properties/index.html">
-                Custom Properties and Nesting
-            </a>
-        </li>
-        <li>
-            <a href="unit-2/layered-components/index.html">
-                Layered Components
-            </a>
-        </li>
-    </ul>
-</nav>
-
-
+    <title>Makay Crandall – WDD 331R Practice Site</title>
+    <link rel="stylesheet" href="dist/styles.css">
 </head>
 <body>
-    <header>
+    <header class="site-header">
         <h1>Makay Crandall</h1>
+        <p class="course-title">WDD 331R: Advanced CSS</p>
     </header>
 
-    <main>
+    <nav class="nav-container">
+        <h2>Course Assignments</h2>
+        <ul class="assignment-grid">
+            <li class="assignment-card">
+                <a href="unit-1/custom-properties/index.html">
+                    <strong>Custom Properties and Nesting</strong>
+                </a>
+                <p>Exploring CSS variables and preprocessor-style nested rules.</p>
+            </li>
+            <li class="assignment-card">
+                <a href="unit-2/layered-components/index.html">
+                    <strong>Layered Components</strong>
+                </a>
+                <p>Organizing design patterns into explicit CSS cascade layers.</p>
+            </li>
+            <li class="assignment-card active">
+                <a href="#">
+                    <strong>Custom CSS Architecture</strong>
+                </a>
+                <p>Deploying a token-first directory build using Lightning CSS.</p>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
         <p>
             Welcome to my Practice Site for WDD 331R. I am a Computer Science student at BYU-Idaho
             interested in web development and data science. This site will grow
