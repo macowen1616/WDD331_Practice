@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "**Student:** Makay Crandall  \r **Semester:** Spring 2026  \r **Live Site:** [View Site](https://macowen1616.github.io/WDD331_Practice/)",
   "main": "index.js",
- "scripts": {
-  "build": "lightningcss --bundle --minify --targets \">= 0.25%\" -o dist/styles.css css/main.css",
-  "watch": "nodemon --watch css -e css --exec \"npm run build\""
+"scripts": {
+  "build": "lightningcss --bundle --minify --targets \">= 0.25%\" -o \"Practice Site/dist/styles.css\" \"Practice Site/css/main.css\"",
+  "watch": "nodemon --watch \"Practice Site/css\" -e css --exec \"npm run build\""
 },
   "repository": {
     "type": "git",
