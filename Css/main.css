@@ -1,8 +1,11 @@
 @layer tokens, base, layout, components, utilities;
 
-@import "tokens/colors.css" layer(tokens);
-@import "tokens/variables.css" layer(tokens);
-@import "base/reset.css" layer(base);
-@import "base/elements.css" layer(base);
-@import "components/card.css" layer(components);
-@import "utilities/utilities.css" layer(utilities);
+@import "./tokens/colors.css" layer(tokens);
+@import "./tokens/variables.css" layer(tokens);
+
+@import "./base/reset.css" layer(base);
+@import "./base/elements.css" layer(base);
+
+@import "./components/card.css" layer(components);
+
+@import "./utilities/utilities.css" layer(utilities);
