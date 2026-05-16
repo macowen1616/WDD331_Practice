@@ -1,0 +1,20 @@
+.temples {
+    display: grid;
+    gap: var(--space-sm);
+
+    li {
+        background: var(--color-surface);
+        padding: var(--space-sm) var(--space-md);
+        display: flex;
+        justify-content: space-between;
+        border-radius: 4px;
+    }
+
+    .temple-status {
+        font-weight: bold;
+        font-size: 0.8rem;
+        
+        &.open { color: var(--color-status-open); }
+        &.construction { color: var(--color-status-work); }
+    }
+}

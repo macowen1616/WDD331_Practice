@@ -1,0 +1,17 @@
+:root {
+    /* Spacing */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    /* Typography */
+    --font-main: 'Segoe UI', system-ui, sans-serif;
+    --font-size-base: 1rem;
+    --font-size-h1: clamp(2rem, 5vw, 3rem);
+
+    /* Borders & Misc */
+    --radius-md: 8px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+}
