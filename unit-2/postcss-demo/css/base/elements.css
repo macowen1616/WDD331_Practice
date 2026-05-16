@@ -1,0 +1,30 @@
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.6;
+    padding: clamp(1rem, 3vw, 3rem);
+}
+
+a {
+    color: var(--color-primary);
+
+    &:hover {
+        color: var(--color-primary-light);
+    }
+}
+
+h1, h2 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+}
+
+dt {
+    font-weight: 700;
+    margin-top: var(--space-sm);
+}
+
+dd {
+    margin-left: 0;
+    color: var(--color-text-muted);
+}
