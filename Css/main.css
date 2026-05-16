@@ -1,6 +1,21 @@
+/* css/main.css */
+
+/* Define your cascade layers */
 @layer tokens, base, layout, components, utilities;
 
-@import "tokens/colors.css" layer(tokens);
+/* Import all of your beautifully organized layer files */
 @import "tokens/variables.css" layer(tokens);
+@import "tokens/colors.css" layer(tokens);
+
 @import "base/reset.css" layer(base);
 @import "base/elements.css" layer(base);
+
+@import "layout/primary.css" layer(layout);
+
+@import "components/nav.css" layer(components);
+@import "components/buttons.css" layer(components);
+@import "components/cards.css" layer(components);
+@import "components/forms.css" layer(components);
+@import "components/temples.css" layer(components);
+
+@import "utilities/utilities.css" layer(utilities);

@@ -1,0 +1,54 @@
+/* ==========================================
+   1. LAYERS & TOKENS 
+   ========================================== */
+@layer tokens, base, layout, components, utilities;
+
+@layer tokens {
+  :root {
+    /* Paste your Unit 2 colors here */
+    --color-primary: #1e3a8a;
+    --color-bg-main: #f8fafc;
+    /* ... rest of your Unit 2 tokens ... */
+  }
+}
+
+/* ==========================================
+   2. BASE ELEMENTS
+   ========================================== */
+@layer base {
+  /* Paste the rules you wrote for your body, h1, a, lists, etc. */
+}
+
+/* ==========================================
+   3. LAYOUT (Pre-written from starter file)
+   ========================================== */
+@layer layout {
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  /* Paste any other grid/layout rules if you had them */
+}
+
+/* ==========================================
+   4. COMPONENTS
+   ========================================== */
+@layer components {
+  /* Paste your .site-nav / navbar rules */
+  
+  /* Paste your .card / grid rules */
+  
+  /* Paste your .btn / button rules */
+  
+  /* Paste your .note-form / form rules */
+  
+  /* Paste your .temples rules */
+}
+
+/* ==========================================
+   5. UTILITIES
+   ========================================== */
+@layer utilities {
+  /* Paste your helper classes here */
+}
