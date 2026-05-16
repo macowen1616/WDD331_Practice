@@ -1,6 +1,10 @@
-/* style.css */
-@import "variables.css";
-@import "reset.css";
-@import "main.css";
-@import "cards.css";
-@import "buttons.css";
+/* css/main.css */
+@import "./variables.css";
+@import "./reset.css";
+@import "./cards.css";
+@import "./buttons.css";
+@import "./elements.css";
+@import "./chrome.css";
+@import "./primary.css";
+@import "./colors.css.css";
+@import "./utilities.css";
