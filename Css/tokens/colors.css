@@ -1,9 +1,0 @@
-:root {
-  --color-primary: #1e3a8a;       /* Deep blue for headers/buttons */
-  --color-secondary: #0d9488;     /* Teal for accents/active states */
-  --color-bg-main: #f8fafc;       /* Light gray page background */
-  --color-bg-card: #ffffff;       /* Pure white for components */
-  --color-text-dark: #1e293b;     /* Main text dark gray */
-  --color-text-light: #64748b;    /* Subtitles and captions */
-  --color-border: #e2e8f0;        /* Card and line dividers */
-}
