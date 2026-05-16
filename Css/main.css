@@ -1,13 +1,8 @@
-/* 1. Declare the CSS Layer order from lowest to highest priority */
 @layer tokens, base, layout, components, utilities;
 
-/* 2. Import files into their respective layers */
 @import "tokens/colors.css" layer(tokens);
 @import "tokens/variables.css" layer(tokens);
-
 @import "base/reset.css" layer(base);
 @import "base/elements.css" layer(base);
-
 @import "components/card.css" layer(components);
-
 @import "utilities/utilities.css" layer(utilities);
