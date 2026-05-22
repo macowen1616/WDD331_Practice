@@ -71,24 +71,32 @@ details.theme-menu {
 > .theme-extra {
         position: absolute;
         z-index: 50;
-        top: 0;                             /* Align vertically with the gear icon */
-        left: calc(100% + var(--spacing-sm));/* Push out completely to the right side */
+        /* Position it right next to or below the gear button */
+        top: calc(100% + var(--spacing-sm)); 
+        right: 0;
         margin: 0;
+        padding: 4px;
+        
+        /* Layout configuration to lay options in a horizontal line */
         display: flex;
-        flex-direction: row;                /* Arrange buttons in a line instead of a column */
+        flex-direction: row;       /* Forces items side-by-side */
         align-items: center;
-        gap: var(--spacing-sm);
-        padding: 0;
-        background: none;
-        border: none;
-        box-shadow: none;
+        gap: var(--spacing-sm);    /* Spacing between the icons */
+        
+        /* Optional styling to make it look like a floating horizontal bar */
+        background-color: var(--theme-toggle-bg);
+        border: 1px solid var(--theme-toggle-border);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
     }
 
     &:not([open]) > .theme-extra {
         display: none;
     }
+    
+    /* Horizontal slide-in reveal animation */
     &[open] > .theme-extra {
-        animation: theme-extra-reveal 0.2s ease-out;
+        animation: theme-extra-reveal-horizontal 0.2s ease-out;
     }
 
     .theme-pick {
