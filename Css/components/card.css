@@ -13,6 +13,7 @@
     padding: var(--space-lg);
     box-shadow: var(--shadow-sm);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding-top: 100px;
   }
 
   .card:hover {

@@ -69,27 +69,27 @@ details.theme-menu {
     }
 
 > .theme-extra {
-        position: absolute;
+        /* Change absolute to relative or static so it stays in the normal flow */
+        position: relative; 
         z-index: 50;
-        /* Position it right next to or below the gear button */
-        top: calc(100% + var(--spacing-sm)); 
+        
+        /* Clear out the top/right anchors that were causing it to float over text */
+        top: 0;
         right: 0;
-        margin: 0;
+        
+        /* Keep these values to handle layout spacing and formatting */
+        margin-top: var(--spacing-sm);
         padding: 4px;
-        
-        /* Layout configuration to lay options in a horizontal line */
-        display: flex;
-        flex-direction: row;       /* Forces items side-by-side */
+        display: inline-flex;  /* Inline-flex keeps it tight around the buttons */
+        flex-direction: row;
         align-items: center;
-        gap: var(--spacing-sm);    /* Spacing between the icons */
+        gap: var(--spacing-sm);
         
-        /* Optional styling to make it look like a floating horizontal bar */
         background-color: var(--theme-toggle-bg);
         border: 1px solid var(--theme-toggle-border);
         border-radius: var(--radius-md);
         box-shadow: var(--shadow-md);
     }
-
     &:not([open]) > .theme-extra {
         display: none;
     }
@@ -138,7 +138,13 @@ html:has(input[name='theme-preference'][value='system']:checked) {
     }
 }
 
-@keyframes theme-extra-reveal {
-    from { transform: translateY(-0.4rem); }
-    to { transform: translateY(0); }
+@keyframes theme-extra-reveal-horizontal {
+    from {
+        opacity: 0;
+        transform: translateX(10px); /* Slides slightly from the right side */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
