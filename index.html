@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makay Crandall – Practice Site</title>
+
+    <script src="js/theme-preference.js"></script>
     <link rel="stylesheet" href="dist/styles.css">
+    <script src="js/theme-preference.js"></script>
 </head>
 <body>
     <main class="container">
@@ -14,7 +17,29 @@
       <p>Welcome to my Practice Site for WDD 331R. I am a Computer Science student at BYU-Idaho
             interested in web development and data science. This site will grow
             throughout the semester as I build new pages and improve my CSS and design skills.</p>
-    </header>
+    <details class="theme-menu">
+    <summary class="theme-control">
+        <span class="visually-hidden">Color scheme</span>
+    </summary>
+    <div class="theme-extra" role="group" aria-label="Choose color scheme">
+        <label class="theme-control theme-pick" data-theme-pick="light">
+            <input name="theme-preference" type="radio" value="light">
+            <span aria-hidden="true">&#9788;&#65039;</span>
+            <span class="visually-hidden">Light</span>
+        </label>
+        <label class="theme-control theme-pick" data-theme-pick="system">
+            <input name="theme-preference" type="radio" value="system" checked>
+            <span aria-hidden="true">&#9881;&#65039;</span>
+            <span class="visually-hidden">System default</span>
+        </label>
+        <label class="theme-control theme-pick" data-theme-pick="dark">
+            <input name="theme-preference" type="radio" value="dark">
+            <span aria-hidden="true">&#127766;</span>
+            <span class="visually-hidden">Dark</span>
+        </label>
+    </div>
+</details>
+          </header>
 
     <section class="assignment-grid">
       
