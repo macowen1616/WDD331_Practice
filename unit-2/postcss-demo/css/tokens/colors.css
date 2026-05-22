@@ -1,10 +1,30 @@
+/* ======================================================================== */
+/* 🔗 IMPORT CENTRAL SYSTEM TOKENS                                           */
+/* This allows this isolated file to access your global light-dark() values  */
+/* ======================================================================== */
+@import url("../../css/tokens/variables.css");
+@import url("../../css/tokens/colors.css");
+
 :root {
-    --color-primary: #1d4e89;
-    --color-primary-light: #2a6cb5;
-    --color-text: #1a1a2e;
-    --color-text-muted: #555;
-    --color-bg: #f8f8f8;
-    --color-surface: #fff;
-    --color-accent: #b8860b;
-    --color-border: #ddd;
+    /* Map your page's original layout variables directly to the global responsive engine */
+    --color-primary: var(--color-accent); 
+    --color-accent: var(--accent-300);   
+    --color-bg: var(--color-bg);
+    --color-surface: var(--color-surface);
+    --color-text: var(--color-text);
+    --color-muted: var(--color-text-muted);
+
+    /* Map your local helper hooks to the core design system tokens */
+    --text-lg: var(--font-size-lg);
+    --radius-md: var(--radius-md);
+    --space-sm: var(--spacing-sm);
+    --space-md: var(--spacing-md);
+    --space-lg: var(--spacing-lg);
+    --space-xl: var(--spacing-xl);
+}
+
+/* Base element correction to ensure the baseline canvas respects theme shifts */
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
 }
