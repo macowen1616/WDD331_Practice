@@ -1,17 +1,11 @@
-@import url('tokens/variables.css') layer(tokens);
-@import url('tokens/colors.css') layer(tokens);
-@import url('components/theme-toggle.css') layer(components);
-/* Keep your other elements.css, layouts, or utilities imports below this */
-
-
-@layer tokens, base, layout, components, utilities;
-
-@import "./tokens/colors.css" layer(tokens);
+/* 1. ALL @import statements MUST go at the absolute top */
 @import "./tokens/variables.css" layer(tokens);
-
+@import "./tokens/colors.css" layer(tokens);
 @import "./base/reset.css" layer(base);
 @import "./base/elements.css" layer(base);
-
+@import "./components/theme-toggle.css" layer(components);
 @import "./components/card.css" layer(components);
-
 @import "./utilities/utilities.css" layer(utilities);
+
+/* 2. The @layer statement comes AFTER all imports are finished */
+@layer tokens, base, layout, components, utilities;
