@@ -68,16 +68,16 @@ details.theme-menu {
         }
     }
 
-    > .theme-extra {
+> .theme-extra {
         position: absolute;
         z-index: 50;
-        top: calc(100% + var(--spacing-md));
-        right: 0;
+        top: 0;                             /* Align vertically with the gear icon */
+        left: calc(100% + var(--spacing-sm));/* Push out completely to the right side */
         margin: 0;
         display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: var(--spacing-md);
+        flex-direction: row;                /* Arrange buttons in a line instead of a column */
+        align-items: center;
+        gap: var(--spacing-sm);
         padding: 0;
         background: none;
         border: none;
