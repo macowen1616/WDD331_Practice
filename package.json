@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "**Student:** Makay Crandall  \r **Semester:** Spring 2026  \r **Live Site:** [View Site](https://macowen1616.github.io/WDD331_Practice/)",
   "main": "index.js",
-"scripts": {
-  "build": "lightningcss --bundle --minify --targets \">= 0.25%\" -o dist/styles.css ./css/main.css",
-  "watch": "nodemon --watch \"Practice Site/css\" -e css --exec \"npm run build\""
-},
+  "scripts": {
+    "build": "lightningcss --bundle --minify --targets \">= 0.25%\" -o dist/styles.css ./css/main.css",
+    "watch": "nodemon --watch \"Practice Site/css\" -e css --exec \"npm run build\""
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/macowen1616/WDD331_Practice.git"
@@ -21,6 +21,8 @@
   "devDependencies": {
     "chokidar-cli": "^3.0.0",
     "lightningcss-cli": "^1.32.0",
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "postcss": "^8.5.15",
+    "postcss-cli": "^11.0.1"
   }
 }
