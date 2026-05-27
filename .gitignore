@@ -1,2 +1,3 @@
 node_modules/
-Css/js/theme-preference.js
+dist/
+css/js/theme-preference.js
