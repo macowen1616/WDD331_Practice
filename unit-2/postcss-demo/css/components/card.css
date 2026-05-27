@@ -1,42 +1,95 @@
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr));
-    gap: var(--space-lg);
-    margin-bottom: var(--space-xl);
-}
-
-.card {
-    background: var(--color-surface);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
-
-    .card-image {
-        width: 100%;
-        aspect-ratio: 3 / 2;
-        object-fit: cover;
+@layer components {
+    /* Centered workspace layout wrapper */
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: var(--spacing-xl) var(--spacing-md);
     }
 
-    .card-body {
-        padding: var(--space-md);
+    /* Magazine-quality Card Grid */
+    main section:not(.reflection) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        gap: 2.5rem; /* Large professional margins separating your columns */
+        margin-top: var(--spacing-xl);
     }
 
-    h2 {
-        font-size: var(--text-lg);
-        margin-bottom: var(--space-sm);
-        color: var(--color-primary);
+    /* Professional Card Framework */
+    article {
+        /* Swap hardcoded colors for variables */
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 16px; /* Smooth, modern rounded corners */
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     }
-}
 
-.reflection {
-    max-width: 50rem;
-    margin-inline: auto;
-    margin-bottom: var(--space-xl);
-    text-align: center;
+    article:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+    }
 
-    h2 {
-        font-size: var(--text-lg);
-        margin-bottom: var(--space-sm);
-        color: var(--color-accent);
+    /* Responsive Image Box Crop */
+    article img {
+        width: 100% !important;
+        height: 250px !important;
+        object-fit: cover !important;
+        display: block;
+        margin: 0;
+        border: none;
+    }
+
+    /* Generous Breathing Room Padding Inside Cards */
+    article .card-body {
+        padding: 2.25rem !important; /* Pulls text away from edges and borders */
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        flex-grow: 1;
+    }
+
+    article h2 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin: 0;
+        color: var(--color-text);
+    }
+
+    /* Bottom Reflection Space Padding */
+    .reflection {
+        max-width: 800px;
+        margin: 4rem auto 0;
+        padding: 2.5rem;
+        background-color: var(--color-surface);
+        border: 1px solid var(--color-border);
+        border-radius: 12px;
+        text-align: center;
+        transition: background-color 0.2s ease;
+    }
+
+    .reflection h2 {
+        font-size: 1.75rem;
+        margin-bottom: var(--spacing-md);
+        color: var(--color-text);
+    }
+
+    .reflection p {
+        color: var(--color-text-muted);
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    /* Centered Minimal Footer */
+    .page-footer {
+        text-align: center;
+        padding: var(--spacing-xl) var(--spacing-md);
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+        border-top: 1px solid var(--color-border);
+        margin-top: var(--spacing-xl);
     }
 }

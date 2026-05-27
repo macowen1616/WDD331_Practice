@@ -1,17 +1,30 @@
 :root {
-    --font-body: system-ui, sans-serif;
-    --font-heading: Georgia, serif;
-    --text-base: 1rem;
-    --text-lg: 1.25rem;
-    --text-xl: clamp(1.5rem, 1rem + 2vw, 2.25rem);
-    --space-xs: 0.25rem;
-    --space-sm: 0.5rem;
-    --space-md: 1rem;
-    --space-lg: 2rem;
-    --space-xl: 4rem;
-    --radius-sm: 0.25rem;
-    --radius-md: 0.5rem;
-    --radius-lg: 1rem;
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.12);
+    /* Typography */
+    --font-family-sans: system-ui, sans-serif;
+    --font-family-mono: monospace;
+    --font-size-sm: 1.4rem;
+    --font-size-md: 1.6rem;
+    --font-size-lg: 1.8rem;
+
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    /* Radii */
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+
+    /* Transitions */
+    --transition-base: 0.2s ease;
+
+    /* Icons */
+    --icon-size-sm: 24px;
+    --icon-size-md: 32px;
+
+    /* Focus */
+    --outline-width: 2px;
 }

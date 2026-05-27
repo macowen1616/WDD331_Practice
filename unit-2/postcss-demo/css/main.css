@@ -1,14 +1,16 @@
+@layer tokens, base, layout, components, utilities;
+
+/* 1. Tokens Layer */
 @import "./tokens/variables.css" layer(tokens);
 @import "./tokens/colors.css" layer(tokens);
+
+/* 2. Base Layer */
 @import "./base/reset.css" layer(base);
 @import "./base/elements.css" layer(base);
+
+/* 3. Components Layer */
 @import "./components/theme-toggle.css" layer(components);
 @import "./components/card.css" layer(components);
-@import "./components/cards.css" layer(components);
-@import "./components/buttons.css" layer(components);
-@import "./components/forms.css" layer(components);
-@import "./components/nav.css" layer(components);
-@import "./components/temples.css" layer(components);
-@import "./utilities/utilities.css" layer(utilities);
 
-@layer tokens, base, layout, components, utilities;
+/* 4. Utilities Layer */
+@import "./utilities/utilities.css" layer(utilities);
