@@ -1,4 +1,7 @@
-/* 1. ALL @import statements MUST go at the absolute top */
+/* 1. Establish the layer architecture hierarchy */
+@layer tokens, base, layout, components, utilities;
+
+/* 2. Import your modular project stylesheets */
 @import "./tokens/variables.css" layer(tokens);
 @import "./tokens/colors.css" layer(tokens);
 @import "./base/reset.css" layer(base);
@@ -7,5 +10,47 @@
 @import "./components/card.css" layer(components);
 @import "./utilities/utilities.css" layer(utilities);
 
-/* 2. The @layer statement comes AFTER all imports are finished */
-@layer tokens, base, layout, components, utilities;
+/* ==========================================================================
+   3. Force Structural Corrections (Bypassing layers to prevent overrides)
+   ========================================================================== */
+
+/* Fix the ultra-wide stretching and center the whole site */
+.container {
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+  box-sizing: border-box !important;
+}
+
+/* Update these specific blocks in your main.css */
+
+.site-header {
+  display: flex !important;
+  justify-content: space-between !important; /* Pushes children apart */
+  align-items: center !important;
+  padding-block: 2rem !important;
+}
+
+.theme-menu {
+  /* Remove the auto margins that were centering it */
+  margin-left: auto !important; 
+  margin-right: 0 !important;   /* Ensures it stays pinned to the right */
+}
+
+/* Stop the introductory paragraph from stretching across the universe */
+.intro p {
+  max-width: 70ch !important;
+  line-height: 1.6 !important;
+  margin-bottom: 3rem !important;
+}
+
+/* Fix the cards being smashed together: create a clean 3-column grid */
+.assignment-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 2rem !important; /* This explicitly forces space between your cards */
+  margin-bottom: 4rem !important;
+}
