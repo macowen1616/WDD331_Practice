@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makay Crandall – Practice Site</title>
+
+<link rel="stylesheet" href="dist/styles.css">
+</head>
+<body>
+    <main class="container">
+    <header class="text-center">
+      <h1>Makay Crandall</h1>
+      <h2>WDD 331R Advanced CSS</h2>
+      <p>Welcome to my Practice Site for WDD 331R. I am a Computer Science student at BYU-Idaho
+            interested in web development and data science. This site will grow
+            throughout the semester as I build new pages and improve my CSS and design skills.</p>
+    <details class="theme-menu">
+    <summary class="theme-control">
+        <span class="visually-hidden">Color scheme</span>
+    </summary>
+    <div class="theme-extra" role="group" aria-label="Choose color scheme">
+        <label class="theme-control theme-pick" data-theme-pick="light">
+            <input name="theme-preference" type="radio" value="light">
+            <span aria-hidden="true">&#9788;&#65039;</span>
+            <span class="visually-hidden">Light</span>
+        </label>
+        <label class="theme-control theme-pick" data-theme-pick="system">
+            <input name="theme-preference" type="radio" value="system" checked>
+            <span aria-hidden="true">&#9881;&#65039;</span>
+            <span class="visually-hidden">System default</span>
+        </label>
+        <label class="theme-control theme-pick" data-theme-pick="dark">
+            <input name="theme-preference" type="radio" value="dark">
+            <span aria-hidden="true">&#127766;</span>
+            <span class="visually-hidden">Dark</span>
+        </label>
+    </div>
+</details>
+          </header>
+
+    <section class="assignment-grid">
+      
+      <article class="card">
+        <h3 class="card-title">Custom Properties and Nesting</h3>
+        <p>An introduction to establishing scalable parameters utilizing standard CSS Variables.</p>
+        <a href="unit-1/custom-properties/index.html" class="card-link">View Project &rarr;</a>
+      </article>
+
+      <article class="card">
+        <h3 class="card-title">Layered Components</h3>
+        <p>Building complex, asynchronous responsive structural systems with native CSS grid properties.</p>
+        <a href="unit-2/layered-components/index.html" class="card-link">View Project &rarr;</a> 
+      </article>
+
+      <article class="card">
+        <h3 class="card-title">postcss-demo</h3>
+        <p>Deep-dive analysis and compilation configuration for modern pre-processors and production tools.</p>
+        <a href="unit-2/postcss-demo/index.html" class="card-link">View Topic Page &rarr;</a>
+      </article>
+
+      </section>
+    </main>
+    <script src="js/theme-preference.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* ======================================================================== */
+/* 🔗 IMPORT GLOBAL SYSTEM TOKENS                                           */
+/* This allows this isolated file to access your global light-dark() values */
+/* ======================================================================== */
+@import url("../../css/tokens/variables.css");
+@import url("../../css/tokens/colors.css");
+@import url("../../css/components/theme-toggle.css");
+
+:root {
+    /* Map your original layout variables directly to the global responsive engine */
+    --color-primary: var(--color-accent); 
+    --color-accent: var(--accent-300);   
+    --color-bg: var(--color-bg);
+    --color-surface: var(--color-surface);
+    --color-text: var(--color-text);
+    --color-muted: var(--color-text-muted);
+
+    /* Point your spacing parameters to the global variable defaults */
+    --space-sm: var(--spacing-sm);
+    --space-md: var(--spacing-md);
+    --space-lg: var(--spacing-lg);
+    --space-xl: var(--spacing-xl);
+    --radius: var(--radius-lg);
+
+    --font-base: var(--font-family-sans);
+    --font-size-base: var(--font-size-md);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-base);
+    font-size: var(--font-size-base);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    padding: clamp(1rem, 3vw, 3rem);
+
+    a {
+        color: var(--color-primary);
+        text-decoration: none;
+        transition: color var(--transition-base);
+
+        &:hover {
+            color: var(--color-link-hover);
+        }
+    }
+}
+
+.site-nav {
+    margin-bottom: var(--space-lg);
+
+    a {
+        font-weight: 600;
+    }
+}
+
+.board-header {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+
+    h1 {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    p {
+        color: var(--color-muted);
+        margin-top: var(--space-sm);
+    }
+}
+
+.card-group {
+    margin-bottom: var(--space-lg);
+
+    h2 {
+        margin-bottom: var(--space-md);
+        font-size: 1.5rem;
+    }
+}
+
+.cards {
+    display: grid;
+    gap: calc(var(--space-md) * 1.5);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+    background-color: var(--color-surface);
+    padding: var(--space-md);
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm); 
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+
+    .card-tag {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        background-color: var(--color-primary);
+        color: light-dark(#ffffff, #000000); 
+        border-radius: var(--radius-sm);
+        width: fit-content;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+        color: var(--color-text);
+    }
+
+    p {
+        color: var(--color-muted);
+        font-size: 0.9rem;
+    }
+
+    .card-meta {
+        margin-top: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            font-size: 0.8rem;
+            color: var(--color-muted);
+        }
+
+        a {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+    }
+}
+
+.board-footer {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    text-align: center;
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border); 
+}

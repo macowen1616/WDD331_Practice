@@ -1,0 +1,150 @@
+details.theme-menu {
+    position: relative;
+    display: inline-block;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    flex-shrink: 0;
+    box-shadow: none;
+    overflow: visible;
+    color: inherit;
+    
+    &:focus,
+    &:focus-visible {
+        outline: none;
+    }
+    
+    > summary.theme-control {
+        text-transform: none;
+        font-weight: normal;
+        list-style: none;
+        width: max-content;
+        &::after {
+            content: none;
+            display: none;
+        }
+        &::-webkit-details-marker {
+            display: none;
+        }
+        &::marker {
+            content: '';
+        }
+        &:focus {
+            outline: none;
+        }
+        &:focus-visible {
+            outline: var(--outline-width) solid var(--color-accent);
+            outline-offset: var(--outline-width);
+        }
+        &::before {
+            content: '\2699\FE0F';
+        }
+    }
+
+    .theme-control {
+        box-sizing: border-box;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: calc(var(--icon-size-md) + var(--spacing-md));
+        min-height: calc(var(--icon-size-md) + var(--spacing-md));
+        margin: 0;
+        padding: 0;
+        font-size: var(--icon-size-sm);
+        line-height: 1;
+        color: var(--header-text);
+        background-color: var(--theme-toggle-bg);
+        border: 1px solid var(--theme-toggle-border);
+        border-radius: var(--radius-sm);
+        cursor: pointer;
+        transition:
+            background-color var(--transition-base),
+            border-color var(--transition-base);
+        &:hover {
+            background-color: var(--theme-toggle-bg-hover);
+            border-color: var(--theme-toggle-border-hover);
+        }
+    }
+
+> .theme-extra {
+        /* Change absolute to relative or static so it stays in the normal flow */
+        position: relative; 
+        z-index: 50;
+        
+        /* Clear out the top/right anchors that were causing it to float over text */
+        top: 0;
+        right: 0;
+        
+        /* Keep these values to handle layout spacing and formatting */
+        margin-top: var(--spacing-sm);
+        padding: 4px;
+        display: inline-flex;  /* Inline-flex keeps it tight around the buttons */
+        flex-direction: row;
+        align-items: center;
+        gap: var(--spacing-sm);
+        
+        background-color: var(--theme-toggle-bg);
+        border: 1px solid var(--theme-toggle-border);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-md);
+    }
+    &:not([open]) > .theme-extra {
+        display: none;
+    }
+    
+    /* Horizontal slide-in reveal animation */
+    &[open] > .theme-extra {
+        animation: theme-extra-reveal-horizontal 0.2s ease-out;
+    }
+
+    .theme-pick {
+        position: relative;
+        input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            margin: 0;
+            pointer-events: none;
+        }
+        &:has(input:focus-visible) {
+            outline: var(--outline-width) solid var(--color-accent);
+            outline-offset: var(--outline-width);
+        }
+    }
+}
+
+html:has(input[name='theme-preference'][value='light']:checked) {
+    & details.theme-menu > summary.theme-control::before {
+        content: '\2600\FE0F';
+    }
+    & details.theme-menu .theme-pick[data-theme-pick='light'] {
+        display: none;
+    }
+}
+html:has(input[name='theme-preference'][value='dark']:checked) {
+    & details.theme-menu > summary.theme-control::before {
+        content: '\1F316';
+    }
+    & details.theme-menu .theme-pick[data-theme-pick='dark'] {
+        display: none;
+    }
+}
+html:has(input[name='theme-preference'][value='system']:checked) {
+    & details.theme-menu .theme-pick[data-theme-pick='system'] {
+        display: none;
+    }
+}
+
+@keyframes theme-extra-reveal-horizontal {
+    from {
+        opacity: 0;
+        transform: translateX(10px); /* Slides slightly from the right side */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
