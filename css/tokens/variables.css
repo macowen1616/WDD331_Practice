@@ -31,3 +31,11 @@
     /* Legacy Map (If you used alternative spacing names in prior assignments) */
     --space-md: var(--spacing-md);
 }
+
+:root {
+    /* ... existing variables ... */
+    
+    /* Elevation Shadow Tokens */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.15);
+}
