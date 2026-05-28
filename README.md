@@ -14,3 +14,4 @@ The site deploys automatically to GitHub Pages on every push to main.
 - [Custom Properties and Nesting](unit-1/custom-properties/index.html)
 - [Layered Components](unit-2/Layered-Components/index.html)
 - [postcss-demo](unit-2/postcss-demo/index.html)
+- [visual-effects](unit-3/visual-effects/index.html)
