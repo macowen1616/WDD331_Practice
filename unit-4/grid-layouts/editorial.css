@@ -1,0 +1,33 @@
+/* Header Navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: var(--space-md);
+}
+
+header nav {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* Main Layout */
+.layout {
+  display: grid;
+  gap: var(--space-lg);
+  /* Mobile: Single Column */
+  grid-template-areas: 
+    "main"
+    "sidebar";
+}
+
+@media (min-width: 768px) {
+  .layout {
+    /* Desktop: Two Columns */
+    grid-template-columns: 1fr 300px;
+    grid-template-areas: "main sidebar";
+  }
+}
+
+main { grid-area: main; }
+aside { grid-area: sidebar; }

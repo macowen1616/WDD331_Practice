@@ -1,0 +1,28 @@
+.card-grid {
+  display: grid;
+  gap: var(--space-md);
+  /* Responsive grid that never overflows */
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  padding: var(--space-sm);
+}
+
+/* Aspect Ratio for Images */
+.card div[aria-hidden="true"] {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-gray-200); /* Placeholder color */
+  margin-block-end: var(--space-sm);
+}
+
+/* Pushes the link to the bottom */
+.card a {
+  margin-block-start: auto;
+  display: inline-block;
+  padding-block-start: var(--space-sm);
+}
