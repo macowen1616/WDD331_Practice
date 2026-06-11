@@ -15,3 +15,7 @@ The site deploys automatically to GitHub Pages on every push to main.
 - [Layered Components](unit-2/Layered-Components/index.html)
 - [postcss-demo](unit-2/postcss-demo/index.html)
 - [visual-effects](unit-3/visual-effects/index.html)
+- [grid-layouts](unit-4/grid-layouts/editorial.html)
+- [grid-layouts](unit-4/grid-layouts/cards.html)
+- [grid-layouts](unit-4/advance/sticky-demo.html)
+- [grid-layouts](unit-4/advance/container-demo.html)
