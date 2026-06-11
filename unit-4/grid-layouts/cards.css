@@ -3,11 +3,18 @@
   gap: var(--space-md);
   /* Responsive grid that never overflows */
   grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+
+  /* ADD THESE */
+  grid-template-rows: auto 1fr auto;
+  align-items: stretch;
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
+  /* CHANGE layout to grid for subgrid */
+  display: grid;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+
   border: 1px solid var(--color-border);
   padding: var(--space-sm);
 }
@@ -25,4 +32,11 @@
   margin-block-start: auto;
   display: inline-block;
   padding-block-start: var(--space-sm);
+}
+
+/* REQUIRED fallback for browsers without subgrid */
+@supports not (grid-template-rows: subgrid) {
+  .card {
+    grid-template-rows: auto 1fr auto;
+  }
 }
