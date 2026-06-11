@@ -1,0 +1,25 @@
+.page {
+  display: flex;
+  gap: 2rem;
+
+  /* overflow: hidden;  <-- This breaks sticky */
+}
+
+.sidebar {
+  width: 250px;
+}
+
+.sticky {
+  position: sticky;
+  top: 1rem; /* REQUIRED */
+
+  padding: 1rem;
+  border: 1px solid #ccc;
+  background: white;
+}
+
+/* FIX COMMENT REQUIRED BY ASSIGNMENT */
+/* Sticky positioning was broken because overflow: hidden
+   was applied to a parent container (.page). This prevents
+   the sticky element from using the viewport for scrolling.
+   Removing overflow: hidden fixes the issue. */
