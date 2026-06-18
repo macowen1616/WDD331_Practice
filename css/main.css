@@ -1,3 +1,6 @@
+/* Import font with swap strategy */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 /* 1. Establish the layer architecture hierarchy */
 @layer tokens, base, layout, components, utilities;
 
@@ -10,6 +13,7 @@
 @import "./components/card.css" layer(components);
 @import "./utilities/utilities.css" layer(utilities);
 
+/* ... Keep the rest of your current structural overrides below ... */
 /* ==========================================================================
    3. Force Structural Corrections (Bypassing layers to prevent overrides)
    ========================================================================== */
