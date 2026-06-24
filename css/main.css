@@ -1,24 +1,17 @@
-/* Import font with swap strategy */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
-/* 1. Establish the layer architecture hierarchy */
+/* 1. LAYER DECLARATION (Must be first) */
 @layer tokens, base, layout, components, utilities;
 
-/* 2. Import your modular project stylesheets */
-@import "./tokens/variables.css" layer(tokens);
-@import "./tokens/colors.css" layer(tokens);
-@import "./base/reset.css" layer(base);
-@import "./base/elements.css" layer(base);
-@import "./components/theme-toggle.css" layer(components);
-@import "./components/card.css" layer(components);
-@import "./utilities/utilities.css" layer(utilities);
+/* 2. IMPORT RULES (Must come after @layer) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import "variables.css" layer(tokens);
+@import "colors.css" layer(tokens);
+@import "reset.css" layer(base);
+@import "elements.css" layer(base);
+@import "theme-toggle.css" layer(components);
+@import "card.css" layer(components);
+@import "utilities.css" layer(utilities);
 
-/* ... Keep the rest of your current structural overrides below ... */
-/* ==========================================================================
-   3. Force Structural Corrections (Bypassing layers to prevent overrides)
-   ========================================================================== */
-
-/* Fix the ultra-wide stretching and center the whole site */
+/* 3. STRUCTURAL OVERRIDES */
 .container {
   width: 100% !important;
   max-width: 1100px !important;
@@ -29,32 +22,53 @@
   box-sizing: border-box !important;
 }
 
-/* Update these specific blocks in your main.css */
-
 .site-header {
   display: flex !important;
-  justify-content: space-between !important; /* Pushes children apart */
+  justify-content: space-between !important;
   align-items: center !important;
   padding-block: 2rem !important;
 }
 
-.theme-menu {
-  /* Remove the auto margins that were centering it */
-  margin-left: auto !important; 
-  margin-right: 0 !important;   /* Ensures it stays pinned to the right */
+/* 4. PROFESSIONAL RESUME STYLING */
+.resume-page {
+  max-width: 800px !important;
+  margin-top: var(--spacing-lg) !important;
 }
 
-/* Stop the introductory paragraph from stretching across the universe */
-.intro p {
-  max-width: 70ch !important;
-  line-height: 1.6 !important;
-  margin-bottom: 3rem !important;
+.resume-header {
+  border-bottom: 2px solid var(--color-accent);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
 }
 
-/* Fix the cards being smashed together: create a clean 3-column grid */
-.assignment-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-  gap: 2rem !important; /* This explicitly forces space between your cards */
-  margin-bottom: 4rem !important;
+.resume-header h1 {
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-xs);
+}
+
+.entry {
+  margin-bottom: var(--spacing-lg);
+}
+
+.entry h3 {
+  margin-bottom: 0;
+  font-size: var(--font-size-lg);
+}
+
+.meta {
+  color: var(--color-text-muted);
+  font-weight: bold;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* 5. PRINT STYLES */
+@media print {
+  .site-header, .theme-menu { display: none !important; }
+  .resume-page { max-width: 100% !important; }
+  
+  .resume-page p, .resume-page li {
+    text-align: justify;
+    hyphens: auto;
+  }
 }
