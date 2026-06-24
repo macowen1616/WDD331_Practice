@@ -28,3 +28,39 @@
     text-decoration: underline;
   }
 }
+@layer base {
+  /* ... keep existing styles ... */
+
+  form {
+    display: grid;
+    gap: var(--spacing-md);
+    max-width: 600px;
+  }
+
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Support for field-sizing if browser allows, with fallbacks */
+  textarea {
+    field-sizing: content;
+    min-height: 100px;
+    max-height: 300px;
+  }
+
+  /* Ensure checkboxes pick up the accent color */
+  input[type="checkbox"] {
+    accent-color: var(--color-accent);
+  }
+}
