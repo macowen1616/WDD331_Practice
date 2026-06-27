@@ -19,3 +19,4 @@ The site deploys automatically to GitHub Pages on every push to main.
 - [grid-layouts](unit-4/grid-layouts/cards.html)
 - [grid-layouts](unit-4/advance/sticky-demo.html)
 - [grid-layouts](unit-4/advance/container-demo.html)
+- [Home](resume.html)
