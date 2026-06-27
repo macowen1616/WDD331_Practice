@@ -59,19 +59,44 @@
 
 /* 5. PRINT STYLES */
 @media print {
-  .site-header, .theme-menu { display: none !important; }
-  .resume-page { max-width: 100% !important; }
+  /* Define page margins to prevent edge cut-off */
+  @page {
+    margin: 1cm;
+  }
+
+  /* Hide interactive site elements */
+  .site-header, .theme-menu { 
+    display: none !important; 
+  }
+
+  /* Center the resume container on the paper */
+  .resume-page { 
+    max-width: 100% !important; 
+    margin: 0 auto !important; 
+    float: none !important;
+  }
   
+  /* Prevent single orphan/widow lines */
   .resume-page p, .resume-page li {
     text-align: justify;
     hyphens: auto;
-    orphans: 3; /* Prevent single line at bottom */
-    widows: 3;  /* Prevent single line at top */
+    orphans: 3;
+    widows: 3;
   }
 
-  /* Surface URLs for links */
+  /* Keep experience entries together */
+  .entry { 
+    break-inside: avoid; 
+  }
+
+  /* Surface URLs for all links except internal anchors */
   a[href]:not([href^="#"])::after {
     content: " (" attr(href) ")";
     font-size: 0.8em;
+  }
+
+  /* Preserve meaningful color on print */
+  .resume-header { 
+    print-color-adjust: exact; 
   }
 }
