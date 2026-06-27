@@ -1,7 +1,7 @@
-/* 1. LAYER DECLARATION (Must be first) */
+/* 1. LAYER DECLARATION */
 @layer tokens, base, layout, components, utilities;
 
-/* 2. IMPORT RULES (Must come after @layer) */
+/* 2. IMPORT RULES */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 @import "variables.css" layer(tokens);
 @import "colors.css" layer(tokens);
@@ -22,13 +22,6 @@
   box-sizing: border-box !important;
 }
 
-.site-header {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  padding-block: 2rem !important;
-}
-
 /* 4. PROFESSIONAL RESUME STYLING */
 .resume-page {
   max-width: 800px !important;
@@ -39,6 +32,7 @@
   border-bottom: 2px solid var(--color-accent);
   margin-bottom: var(--spacing-lg);
   padding-bottom: var(--spacing-md);
+  print-color-adjust: exact; /* Preserve color on print */
 }
 
 .resume-header h1 {
@@ -48,6 +42,7 @@
 
 .entry {
   margin-bottom: var(--spacing-lg);
+  break-inside: avoid; /* Prevent splitting entries across pages */
 }
 
 .entry h3 {
@@ -70,5 +65,13 @@
   .resume-page p, .resume-page li {
     text-align: justify;
     hyphens: auto;
+    orphans: 3; /* Prevent single line at bottom */
+    widows: 3;  /* Prevent single line at top */
+  }
+
+  /* Surface URLs for links */
+  a[href]:not([href^="#"])::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
   }
 }

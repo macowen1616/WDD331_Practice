@@ -27,10 +27,8 @@
     color: var(--color-link-hover);
     text-decoration: underline;
   }
-}
-@layer base {
-  /* ... keep existing styles ... */
 
+  /* Form Styles */
   form {
     display: grid;
     gap: var(--spacing-md);
@@ -52,14 +50,12 @@
     border-radius: var(--radius-sm);
   }
 
-  /* Support for field-sizing if browser allows, with fallbacks */
   textarea {
     field-sizing: content;
     min-height: 100px;
     max-height: 300px;
   }
 
-  /* Ensure checkboxes pick up the accent color */
   input[type="checkbox"] {
     accent-color: var(--color-accent);
   }
