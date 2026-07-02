@@ -1,414 +1,159 @@
-/* ======================================================
-   Activity Dashboard Motion Assignment
-   Unit 6 - motion.css
-======================================================*/
+/* =========================
+   Design System
+========================= */
 
-/* ---------- Page Layout ---------- */
+:root {
+  --bg: #0f1115;
+  --surface: #171a21;
+  --text: #e7eaf0;
+  --muted: #a7b0c0;
+  --accent: #7aa2ff;
+
+  --radius: 14px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 4rem;
+
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
 
 body {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-.site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 3rem;
+/* =========================
+   Hero Section
+========================= */
+
+.hero {
+  padding: var(--space-4) var(--space-2);
+  text-align: center;
 }
 
-.site-name {
-    font-size: 1.4rem;
-    font-weight: 700;
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 var(--space-1);
+  letter-spacing: -0.02em;
 }
 
-nav {
-    display: flex;
-    gap: 1rem;
+.hero p {
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0 auto;
 }
 
-nav a {
-    text-decoration: none;
-    color: inherit;
-    padding: .5rem .85rem;
-    border-radius: .5rem;
+/* =========================
+   Layout
+========================= */
+
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-3);
 }
 
-.nav-cta {
-    border: 2px solid currentColor;
+.spacer {
+  height: 60vh;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
 }
 
-.dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-    gap: 1rem;
+/* =========================
+   Scroll Progress Bar
+   (scroll() timeline)
+========================= */
+
+.scroll-progress-bar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    #9b7aff,
+    #6ee7ff
+  );
+
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 999;
 }
 
-.status {
-    display: flex;
-    align-items: center;
-    gap: .75rem;
+/* Enhanced motion only */
+@media (prefers-reduced-motion: no-preference) {
+
+  @keyframes progress-fill {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  .scroll-progress-bar {
+    animation: progress-fill linear both;
+    animation-timeline: scroll(root);
+  }
 }
 
-.status-badge {
-    display: inline-block;
-    padding: .4rem .9rem;
-    border-radius: 999px;
-    background: green;
-    color: white;
-    font-weight: 600;
-}
-
-.actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 2rem;
-}
-
-.btn {
-    cursor: pointer;
-    padding: .8rem 1.25rem;
-    border-radius: .5rem;
-    font-size: 1rem;
-}
+/* =========================
+   Card Grid
+========================= */
 
 .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
-    gap: 1.5rem;
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
 }
 
-.card {
-    border: 1px solid rgba(0,0,0,.12);
-    border-radius: 12px;
-    padding: 1.5rem;
-    background: white;
+/* =========================
+   Cards (Base State)
+========================= */
+
+.reveal-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  box-shadow: var(--shadow);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  /* fallback state (important) */
+  opacity: 1;
+  transform: translateY(0);
+  will-change: transform, opacity;
 }
 
-.card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: .5rem;
+/* subtle hover (works even without scroll animations) */
+.reveal-card:hover {
+  transform: translateY(-4px);
+  transition: transform 200ms ease;
 }
 
-.card-tag {
-    padding: .3rem .7rem;
-    border-radius: 999px;
-    background: #dff6df;
-    font-size: .85rem;
-}
-
-.card-tag--active {
-    background: #fff3bf;
-}
-
-.card-tag--pending {
-    background: #ececec;
-}
-
-.card-link {
-    display: inline-block;
-    margin-top: 1rem;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-
-
-/* ======================================================
-   Motion
-======================================================*/
+/* =========================
+   View-driven animation
+   (view() timeline)
+========================= */
 
 @media (prefers-reduced-motion: no-preference) {
 
-/* ---------- Navigation ---------- */
-
-nav a {
-    transition-property:
-        color,
-        background-color,
-        transform;
-    transition-duration:
-        .25s;
-    transition-timing-function:
-        ease-out;
-}
-
-nav a:hover,
-nav a:focus-visible {
-    background: rgba(0,0,0,.08);
-    color: royalblue;
-    transform: translateY(-2px);
-
-    transition-property:
-        color,
-        background-color,
-        transform;
-    transition-duration:
-        .18s;
-    transition-timing-function:
-        ease-in;
-}
-
-.nav-cta {
-    transition-property:
-        background-color,
-        color,
-        transform,
-        box-shadow;
-    transition-duration:
-        .3s;
-    transition-timing-function:
-        ease-out;
-}
-
-.nav-cta:hover,
-.nav-cta:focus-visible {
-    background: royalblue;
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(0,0,0,.18);
-
-    transition-property:
-        background-color,
-        color,
-        transform,
-        box-shadow;
-    transition-duration:
-        .18s;
-    transition-timing-function:
-        ease-in;
-}
-
-
-/* ---------- Buttons ---------- */
-
-.btn-primary {
-    transition-property:
-        background-color,
-        transform,
-        box-shadow;
-    transition-duration:
-        .3s;
-    transition-timing-function:
-        ease-out;
-}
-
-.btn-primary:hover,
-.btn-primary:focus-visible {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 22px rgba(0,0,0,.18);
-
-    transition-property:
-        background-color,
-        transform,
-        box-shadow;
-    transition-duration:
-        .18s;
-    transition-timing-function:
-        ease-in;
-}
-
-
-.btn-secondary {
-    transition-property:
-        background-color,
-        color,
-        transform;
-    transition-duration:
-        .25s;
-    transition-timing-function:
-        ease-out;
-}
-
-.btn-secondary:hover,
-.btn-secondary:focus-visible {
-    transform: translateY(-2px);
-
-    transition-property:
-        background-color,
-        color,
-        transform;
-    transition-duration:
-        .18s;
-    transition-timing-function:
-        ease-in;
-}
-
-
-.btn-ghost {
-    transition-property:
-        color,
-        background-color;
-    transition-duration:
-        .2s;
-    transition-timing-function:
-        ease-out;
-}
-
-.btn-ghost:hover,
-.btn-ghost:focus-visible {
-    background: rgba(0,0,0,.05);
-
-    transition-property:
-        color,
-        background-color;
-    transition-duration:
-        .15s;
-    transition-timing-function:
-        ease-in;
-}
-
-
-/* ---------- Cards ---------- */
-
-.card {
-    transition-property:
-        transform,
-        box-shadow,
-        border-color;
-    transition-duration:
-        .3s;
-    transition-timing-function:
-        ease-out;
-}
-
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 14px 26px rgba(0,0,0,.12);
-    border-color: rgba(0,0,0,.25);
-
-    transition-property:
-        transform,
-        box-shadow,
-        border-color;
-    transition-duration:
-        .18s;
-    transition-timing-function:
-        ease-in;
-}
-
-.card-link {
-    transition-property:
-        color,
-        transform;
-    transition-duration:
-        .25s;
-    transition-timing-function:
-        ease-out;
-}
-
-.card-link:hover,
-.card-link:focus-visible {
-    color: royalblue;
-    transform: translateX(6px);
-
-    transition-property:
-        color,
-        transform;
-    transition-duration:
-        .15s;
-    transition-timing-function:
-        ease-in;
-}
-
-
-/* ---------- Status Badge Animation ---------- */
-
-@keyframes livePulse {
-
+  @keyframes card-reveal {
     from {
-        transform: scale(1);
-        opacity: .9;
+      opacity: 0;
+      transform: translateY(28px);
     }
-
     to {
-        transform: scale(1.08);
-        opacity: 1;
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
 
-}
-
-.status-badge {
-
-    animation-name: livePulse;
-    animation-duration: 1.4s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-
-}
-
-
-/* ---------- Choose Topic ----------
-   Animation Choreography
-   Staggered card entrances
------------------------------------*/
-
-@keyframes cardEntrance {
-
-    from {
-        opacity: 0;
-        transform: translateY(24px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
-.card {
-
-    animation: cardEntrance .7s ease-out both;
-
-}
-
-.card:nth-child(1) { animation-delay: .05s; }
-.card:nth-child(2) { animation-delay: .15s; }
-.card:nth-child(3) { animation-delay: .25s; }
-.card:nth-child(4) { animation-delay: .35s; }
-.card:nth-child(5) { animation-delay: .45s; }
-.card:nth-child(6) { animation-delay: .55s; }
-
-}
-
-
-
-/* ======================================================
-   Reduced Motion
-======================================================*/
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-
-        transition: none !important;
-
-    }
-
-    .status-badge {
-
-        animation: none;
-        opacity: .95;
-        transform: none;
-        box-shadow: 0 0 0 4px rgba(0,128,0,.18);
-
-    }
-
-    .card {
-
-        animation: none;
-
-    }
-
+  .reveal-card {
+    animation: card-reveal ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 65%;
+  }
 }
