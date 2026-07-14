@@ -3,15 +3,19 @@
 
 /* 2. IMPORT RULES */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-@import "css/tokens/variables.css" layer(tokens);
-@import "css/tokens/colors.css" layer(tokens);
-@import "css/base/reset.css" layer(base);
-@import "css/base/elements.css" layer(base);
-@import "css/components/theme-toggle.css" layer(components);
-@import "css/components/card.css" layer(components);
-@import "css/utilities/utilities.css" layer(utilities);
-@import 'css/components/icons.css';
-@import 'css/components/effects.css';
+
+@import "tokens/variables.css" layer(tokens);
+@import "tokens/colors.css" layer(tokens);
+
+@import "base/reset.css" layer(base);
+@import "base/elements.css" layer(base);
+
+@import "components/theme-toggle.css" layer(components);
+@import "components/card.css" layer(components);
+@import "components/icons.css";
+@import "components/effects.css";
+
+@import "utilities/utilities.css" layer(utilities);
 
 /* 3. STRUCTURAL OVERRIDES */
 .container {
