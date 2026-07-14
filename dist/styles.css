@@ -66,3 +66,12 @@ img{
     border-radius: var(--radius-md);
     border:#000000 5px solid;
 }
+
+body{
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-family-sans);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
