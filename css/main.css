@@ -3,20 +3,15 @@
 
 /* 2. IMPORT RULES */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
 @import "tokens/variables.css" layer(tokens);
 @import "tokens/colors.css" layer(tokens);
-
 @import "base/reset.css" layer(base);
 @import "base/elements.css" layer(base);
-
 @import "components/theme-toggle.css" layer(components);
 @import "components/card.css" layer(components);
-@import "components/icons.css";
-@import "components/effects.css";
-
+@import "components/icons.css" layer(components);
+@import "components/effects.css" layer(components);
 @import "utilities/utilities.css" layer(utilities);
-
 /* 3. STRUCTURAL OVERRIDES */
 .container {
   width: 100% !important;
