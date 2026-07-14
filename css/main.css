@@ -10,6 +10,7 @@
 @import "theme-toggle.css" layer(components);
 @import "card.css" layer(components);
 @import "utilities.css" layer(utilities);
+@import 'components/icons.css';
 
 /* 3. STRUCTURAL OVERRIDES */
 .container {
