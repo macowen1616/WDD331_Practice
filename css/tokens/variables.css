@@ -1,41 +1,56 @@
 :root {
-    /* Typography */
-    --font-family-sans: system-ui, sans-serif;
-    --font-family-mono: monospace;
+    /* =========================
+       Typography (Families)
+       ========================= */
+    --font-family-body: 'Inter', system-ui, sans-serif;
+    --font-family-heading: 'Inter', system-ui, sans-serif;
+
+    /* =========================
+       Modular Scale (Steps)
+       ========================= */
+    --font-size-xs: 1.2rem;
     --font-size-sm: 1.4rem;
     --font-size-md: 1.6rem;
     --font-size-lg: 1.8rem;
+    --font-size-xl: 2.1rem;
+    --font-size-2xl: 2.4rem;
+    --font-size-3xl: 3.0rem;
+    --font-size-4xl: 3.6rem;
 
-    /* Spacing */
+    /* =========================
+       Fluid Typography (Clamp)
+       ========================= */
+    --font-size-fluid-lg: clamp(2.4rem, 1.2vw + 1.8rem, 3.6rem);
+    --font-size-fluid-display: clamp(3.0rem, 1.5vw + 2rem, 4.2rem);
+
+    /* =========================
+       Semantic Roles
+       ========================= */
+    --font-size-body: var(--font-size-md);
+    --font-size-caption: var(--font-size-xs);
+    --font-size-heading-sm: var(--font-size-xl);
+    --font-size-heading-md: var(--font-size-2xl);
+    --font-size-heading-lg: var(--font-size-fluid-lg);
+    --font-size-display: var(--font-size-fluid-display);
+
+    /* =========================
+       Line Heights
+       ========================= */
+    --line-height-body: 1.6;
+    --line-height-heading: 1.2;
+
+    /* =========================
+       Spacing, Radii, Shadows
+       ========================= */
     --spacing-xs: 4px;
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 24px;
     --spacing-xl: 32px;
-
-    /* Radii */
     --radius-sm: 4px;
     --radius-md: 6px;
     --radius-lg: 8px;
-
-    /* Transitions */
-    --transition-base: 0.2s ease;
-
-    /* Icons */
-    --icon-size-sm: 24px;
-    --icon-size-md: 32px;
-
-    /* Focus */
-    --outline-width: 2px;
-
-    /* Legacy Map (If you used alternative spacing names in prior assignments) */
-    --space-md: var(--spacing-md);
-}
-
-:root {
-    /* ... existing variables ... */
-    
-    /* Elevation Shadow Tokens */
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.1);
     --shadow-md: 0 4px 6px rgba(0,0,0,0.15), 0 10px 20px rgba(0,0,0,0.15);
+    --transition-base: 0.2s ease;
 }

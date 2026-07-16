@@ -1,20 +1,21 @@
-/* 1. Establish the layer architecture hierarchy */
+/* 1. LAYER DECLARATION */
 @layer tokens, base, layout, components, utilities;
 
-/* 2. Import your modular project stylesheets */
-@import "./tokens/variables.css" layer(tokens);
-@import "./tokens/colors.css" layer(tokens);
-@import "./base/reset.css" layer(base);
-@import "./base/elements.css" layer(base);
-@import "./components/theme-toggle.css" layer(components);
-@import "./components/card.css" layer(components);
-@import "./utilities/utilities.css" layer(utilities);
+/* 2. IMPORT RULES */
 
-/* ==========================================================================
-   3. Force Structural Corrections (Bypassing layers to prevent overrides)
-   ========================================================================== */
 
-/* Fix the ultra-wide stretching and center the whole site */
+/* Add the folder names to the paths */
+@import "tokens/variables.css" layer(tokens);
+@import "tokens/colors.css" layer(tokens);
+@import "base/reset.css" layer(base);
+@import "base/elements.css" layer(base);
+@import "components/theme-toggle.css" layer(components);
+@import "components/card.css" layer(components);
+@import "components/icons.css" layer(components);
+@import "components/effects.css" layer(components);
+@import "utilities/utilities.css" layer(utilities);
+
+/* 3. STRUCTURAL OVERRIDES */
 .container {
   width: 100% !important;
   max-width: 1100px !important;
@@ -25,32 +26,87 @@
   box-sizing: border-box !important;
 }
 
-/* Update these specific blocks in your main.css */
-
-.site-header {
-  display: flex !important;
-  justify-content: space-between !important; /* Pushes children apart */
-  align-items: center !important;
-  padding-block: 2rem !important;
+/* 4. PROFESSIONAL RESUME STYLING */
+.resume-page {
+  max-width: 800px !important;
+  margin-top: var(--spacing-lg) !important;
 }
 
-.theme-menu {
-  /* Remove the auto margins that were centering it */
-  margin-left: auto !important; 
-  margin-right: 0 !important;   /* Ensures it stays pinned to the right */
+.resume-header {
+  border-bottom: 2px solid var(--color-accent);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  print-color-adjust: exact; /* Preserve color on print */
 }
 
-/* Stop the introductory paragraph from stretching across the universe */
-.intro p {
-  max-width: 70ch !important;
-  line-height: 1.6 !important;
-  margin-bottom: 3rem !important;
+.resume-header h1 {
+  color: var(--color-accent);
+  margin-bottom: var(--spacing-xs);
 }
 
-/* Fix the cards being smashed together: create a clean 3-column grid */
-.assignment-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-  gap: 2rem !important; /* This explicitly forces space between your cards */
-  margin-bottom: 4rem !important;
+.entry {
+  margin-bottom: var(--spacing-lg);
+  break-inside: avoid; /* Prevent splitting entries across pages */
 }
+
+.entry h3 {
+  margin-bottom: 0;
+  font-size: var(--font-size-lg);
+}
+
+.meta {
+  color: var(--color-text-muted);
+  font-weight: bold;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* 5. PRINT STYLES */
+@media print {
+  /* Define page margins to prevent edge cut-off */
+  @page {
+    margin: 1cm;
+  }
+
+  /* Hide interactive site elements */
+  .site-header, .theme-menu { 
+    display: none !important; 
+  }
+
+  /* Center the resume container on the paper */
+  .resume-page { 
+    max-width: 100% !important; 
+    margin: 0 auto !important; 
+    float: none !important;
+  }
+  
+  /* Prevent single orphan/widow lines */
+  .resume-page p, .resume-page li {
+    text-align: justify;
+    hyphens: auto;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Keep experience entries together */
+  .entry { 
+    break-inside: avoid; 
+  }
+
+  /* Surface URLs for all links except internal anchors */
+  a[href]:not([href^="#"])::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+
+  /* Preserve meaningful color on print */
+  .resume-header { 
+    print-color-adjust: exact; 
+  }
+}
+
+img.profile-pic {
+    align-items: center;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    }

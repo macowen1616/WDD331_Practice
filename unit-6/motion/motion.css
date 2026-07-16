@@ -1,0 +1,159 @@
+/* =========================
+   Design System
+========================= */
+
+:root {
+  --bg: #0f1115;
+  --surface: #171a21;
+  --text: #e7eaf0;
+  --muted: #a7b0c0;
+  --accent: #7aa2ff;
+
+  --radius: 14px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 4rem;
+
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* =========================
+   Hero Section
+========================= */
+
+.hero {
+  padding: var(--space-4) var(--space-2);
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 var(--space-1);
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+/* =========================
+   Layout
+========================= */
+
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: var(--space-3);
+}
+
+.spacer {
+  height: 60vh;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+
+/* =========================
+   Scroll Progress Bar
+   (scroll() timeline)
+========================= */
+
+.scroll-progress-bar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    #9b7aff,
+    #6ee7ff
+  );
+
+  transform-origin: left;
+  transform: scaleX(0);
+  z-index: 999;
+}
+
+/* Enhanced motion only */
+@media (prefers-reduced-motion: no-preference) {
+
+  @keyframes progress-fill {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  .scroll-progress-bar {
+    animation: progress-fill linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+/* =========================
+   Card Grid
+========================= */
+
+.card-grid {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* =========================
+   Cards (Base State)
+========================= */
+
+.reveal-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  box-shadow: var(--shadow);
+
+  border: 1px solid rgba(255, 255, 255, 0.06);
+
+  /* fallback state (important) */
+  opacity: 1;
+  transform: translateY(0);
+  will-change: transform, opacity;
+}
+
+/* subtle hover (works even without scroll animations) */
+.reveal-card:hover {
+  transform: translateY(-4px);
+  transition: transform 200ms ease;
+}
+
+/* =========================
+   View-driven animation
+   (view() timeline)
+========================= */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  @keyframes card-reveal {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .reveal-card {
+    animation: card-reveal ease-out both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 65%;
+  }
+}
