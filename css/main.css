@@ -2,7 +2,7 @@
 @layer tokens, base, layout, components, utilities;
 
 /* 2. IMPORT RULES */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 
 /* Add the folder names to the paths */
 @import "tokens/variables.css" layer(tokens);
@@ -104,3 +104,9 @@
     print-color-adjust: exact; 
   }
 }
+
+img.profile-pic {
+    align-items: center;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    }
