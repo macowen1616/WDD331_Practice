@@ -75,3 +75,11 @@ body{
     margin: 0;
     padding: 0;
 }
+
+h2.header {
+    padding-top: var(--spacing-lg);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-md);
+    font-weight: bold;
+    text-align: center;
+}
