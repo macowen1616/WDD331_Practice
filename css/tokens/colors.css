@@ -2,7 +2,7 @@
     color-scheme: light;
 
     /* ---- Seeds ---- */
-    --seed-bg: #f4f6f8;
+    --seed-bg: #e0e7ff;
     --seed-surface: #ffffff;
     --seed-text: #1e293b;
     --seed-text-muted: #64748b;
@@ -37,7 +37,7 @@ html:has(input[name='theme-preference'][value='dark']:checked) {
 
 :root, html {
     /* ---- Semantic tokens ---- */
-    --color-bg: light-dark(var(--seed-bg), oklch(0.18 0.02 260));
+    --color-bg: light-dark(var(--seed-bg), oklch(20% 0.02 260));
     --color-surface: light-dark(var(--seed-surface), oklch(0.22 0.03 260));
     --color-text: light-dark(var(--seed-text), oklch(0.88 0.02 260));
     --color-text-muted: light-dark(var(--seed-text-muted), oklch(0.68 0.03 250));
