@@ -28,6 +28,16 @@
   box-sizing: border-box !important;
 }
 
+/* In main.css */
+.container-resume-page {
+  max-width: 800px !important;
+  margin: var(--spacing-xl) auto !important;
+  background-color: var(--color-surface);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
 /* 4. PROFESSIONAL RESUME STYLING */
 .resume-page {
   max-width: 800px !important;
@@ -45,6 +55,9 @@
   color: var(--color-accent);
   margin-bottom: var(--spacing-xs);
 }
+
+
+
 
 .entry {
   margin-bottom: var(--spacing-lg);
