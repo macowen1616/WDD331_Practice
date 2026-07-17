@@ -107,3 +107,130 @@
   }
 }
 
+img.profile-pic {
+    display: block;          /* Makes the image a block element */
+    margin: var(--spacing-lg) auto; /* Centers the image horizontally */
+    border-color: var(--color-accent); /* Optional: adds a border color */
+    border-width: 4px;       /* Optional: sets the border width */
+    border-style: solid;     /* Optional: sets the border style */  
+    
+}
+
+div.container {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    padding-left: 1.5rem;
+    padding-top: 3rem;
+}
+
+div.container.nav-content {
+  display: flex;             /* Enables Flexbox */
+    justify-content: space-between; /* Puts your name on the left and the menu on the right */
+    align-items: center;  
+}
+div.container.nav-content a{
+    display: flex;             /* Turns the list items horizontal */
+    list-style-type: none;     /* Removes the bullet markers */
+    gap: 1rem;                 /* Adds space between your links */
+    padding: 0
+}
+
+
+li{
+    list-style-type: none;
+}
+
+article.card{
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-1g);
+    padding-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: var(--spacing-lg);
+    margin-left: 1rem;
+}
+
+
+h2.header {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    padding-top: 5rem;
+}
+img.profile-pic {
+    display: block;          /* Makes the image a block element */
+    margin: var(--spacing-lg) auto; /* Centers the image horizontally */
+    border-color: var(--color-accent); /* Optional: adds a border color */
+    border-width: 4px;       /* Optional: sets the border width */
+    border-style: solid;     /* Optional: sets the border style */  
+    
+}
+
+div.container {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    padding-left: 1.5rem;
+    padding-top: 3rem;
+}
+
+div.container.nav-content {
+  display: flex;             /* Enables Flexbox */
+    justify-content: space-between; /* Puts your name on the left and the menu on the right */
+    align-items: center;  
+}
+div.container.nav-content a{
+display: inline;             /* Makes the list items sit side-by-side */
+    list-style-type: none;     /* Removes the bullet markers */
+    gap: 2rem;                 /* Adds space between the links */
+    padding: 1rem;                /* Removes default browser padding */
+    margin: 0;    /* Removes the bullet markers */
+
+}
+
+
+li{
+    list-style-type: none;
+    display: inline;
+}
+
+article.card{
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-1g);
+    padding-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: var(--spacing-lg);
+    margin-left: 1rem;
+}
+
+
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%; /* Initial width */
+  height: 5px; /* Adjust thickness */
+  background-color: var(--color-accent); /* Matches your site's accent color */
+  z-index: 9999; /* Ensures it stays on top of other content */
+}
+
+h2.header {
+    text-align: center;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    padding-top: 5rem;
+}
+
+ul.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Adjust spacing between links */
+    padding: 1rem; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
