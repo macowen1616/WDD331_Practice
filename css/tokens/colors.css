@@ -2,7 +2,9 @@
     color-scheme: light;
 
     /* ---- Seeds ---- */
-    --seed-bg: #e0e7ff;
+/* Set a very soft, warm beige for the main page background */
+    --seed-bg: #f5f3e9; 
+    /* Keep the surface (cards) pure white or slightly warmer for depth */
     --seed-surface: #ffffff;
     --seed-text: #1e293b;
     --seed-text-muted: #64748b;

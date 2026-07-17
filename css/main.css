@@ -75,6 +75,8 @@
     display: none !important; 
   }
 
+  
+
   /* Center the resume container on the paper */
   .resume-page { 
     max-width: 100% !important; 
@@ -116,12 +118,15 @@ img.profile-pic {
     
 }
 
-div.container {
-    text-align: center;
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
-    padding-left: 1.5rem;
-    padding-top: 3rem;
+/* Replace your existing div.container blocks in main.css with this */
+.container {
+    max-width: 1100px;
+    margin: var(--spacing-lg) auto;
+    padding: var(--spacing-xl);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    text-align: center; /* Aligns text professionally to the left */
 }
 
 div.container.nav-content {
@@ -165,17 +170,12 @@ img.profile-pic {
     margin: var(--spacing-lg) auto; /* Centers the image horizontally */
     border-color: var(--color-accent); /* Optional: adds a border color */
     border-width: 4px;       /* Optional: sets the border width */
-    border-style: solid;     /* Optional: sets the border style */  
+    border-style: solid;     /* Optional: sets the border style */ 
+    max-width: 250px 
     
 }
 
-div.container {
-    text-align: center;
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
-    padding-left: 1.5rem;
-    padding-top: 3rem;
-}
+
 
 div.container.nav-content {
   display: flex;             /* Enables Flexbox */
