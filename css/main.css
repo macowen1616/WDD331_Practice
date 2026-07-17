@@ -122,14 +122,7 @@
   }
 }
 
-img.profile-pic {
-    display: block;          /* Makes the image a block element */
-    margin: var(--spacing-lg) auto; /* Centers the image horizontally */
-    border-color: var(--color-accent); /* Optional: adds a border color */
-    border-width: 4px;       /* Optional: sets the border width */
-    border-style: solid;     /* Optional: sets the border style */  
-    
-}
+
 
 /* Replace your existing div.container blocks in main.css with this */
 .container {
@@ -184,8 +177,11 @@ img.profile-pic {
     border-color: var(--color-accent); /* Optional: adds a border color */
     border-width: 4px;       /* Optional: sets the border width */
     border-style: solid;     /* Optional: sets the border style */ 
-    max-width: 250px 
+/* Increase this value to make the picture larger */
+    width: 400px; 
     
+    /* Alternatively, use max-width to keep it responsive */
+    max-width: 100%;
 }
 
 
