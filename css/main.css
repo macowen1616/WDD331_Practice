@@ -1,202 +1,101 @@
 /* 1. LAYER DECLARATION */
 @layer tokens, base, layout, components, utilities;
 
-/* 2. IMPORT RULES */
 
-
-/* Add the folder names to the paths */
+/* 2. IMPORTS */
 @import "tokens/variables.css" layer(tokens);
 @import "tokens/colors.css" layer(tokens);
+
 @import "base/reset.css" layer(base);
 @import "base/elements.css" layer(base);
+
 @import "components/theme-toggle.css" layer(components);
 @import "components/card.css" layer(components);
 @import "components/icons.css" layer(components);
 @import "components/effects.css" layer(components);
+
 @import "utilities/utilities.css" layer(utilities);
 
-/* 3. STRUCTURAL OVERRIDES */
 
+/* 3. GENERAL LAYOUT */
 
 .container {
-  width: 100% !important;
-  max-width: 1100px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 1.5rem !important;
-  padding-right: 1.5rem !important;
-  box-sizing: border-box !important;
-}
-
-/* In main.css */
-.container-resume-page {
-  max-width: 800px !important;
-  margin: var(--spacing-xl) auto !important;
-  background-color: var(--color-surface);
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
-}
-
-/* 4. PROFESSIONAL RESUME STYLING */
-.resume-page {
-  max-width: 800px !important;
-  margin-top: var(--spacing-lg) !important;
-}
-
-.resume-header {
-  border-bottom: 2px solid var(--color-accent);
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-md);
-  print-color-adjust: exact; /* Preserve color on print */
-}
-
-.resume-header h1 {
-  color: var(--color-accent);
-  margin-bottom: var(--spacing-xs);
-}
-
-
-
-
-.entry {
-  margin-bottom: var(--spacing-lg);
-  break-inside: avoid; /* Prevent splitting entries across pages */
-}
-
-.entry h3 {
-  margin-bottom: 0;
-  font-size: var(--font-size-lg);
-}
-
-.meta {
-  color: var(--color-text-muted);
-  font-weight: bold;
-  font-size: var(--font-size-sm);
-  margin-bottom: var(--spacing-xs);
-}
-
-/* 5. PRINT STYLES */
-@media print {
-  /* Define page margins to prevent edge cut-off */
-  @page {
-    margin: 1cm 0.5cm 1cm 2cm;
-    
-  }
-
-  /* Hide navigation and footer elements */
-  .site-nav, .site-footer { 
-    display: none !important; 
-  }
-
-  /* Center the resume container on the paper */
-  .resume-page { 
-    max-width: 100% !important; 
-    margin: 0 auto !important; 
-    float: none !important;
-  }
-  
-  .container-resume-page {
-    margin: 0 !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    padding-left: 5rem !important; /* Adjust left padding for print */
-  }
-
-  .entry {
-    margin-bottom: 0.75rem;       /* Reduce space between job entries */
-  }
-
-  .entry h3 {
-    font-size: 1.1rem;            /* Make job titles slightly smaller */
-    margin-bottom: 0.2rem;
-  }
-
-  .meta {
-    font-size: 0.9rem;            /* Adjust meta info (dates) */
-  }
-
-  /* ... rest of your print styles ... */
-}
-  
-  /* Prevent single orphan/widow lines */
-  .resume-page p, .resume-page li {
-    text-align: justify;
-    hyphens: auto;
-    orphans: 3;
-    widows: 3;
-  }
-
-  /* Keep experience entries together */
-  .entry { 
-    break-inside: avoid; 
-  }
-
-  /* Surface URLs for all links except internal anchors */
-  a[href]:not([href^="#"])::after {
-    content: " (" attr(href) ")";
-    font-size: 0.8em;
-  }
-
-  /* Preserve meaningful color on print */
-  .resume-header { 
-    print-color-adjust: exact; 
-  }
-
-.skills{
-    justify-content: left;
-    gap: 1rem; /* Adjust spacing between links */
-    padding: 1rem; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-}
-ul.skills-list {
-    list-style-type: disc; /* Use disc bullets for skills */
-    padding-left: 1.5rem;  /* Indent the list */
-    margin: 0;             /* Remove default margin */
-    display: block;          /* Use flexbox for layout */
-}
-
-
-/* Replace your existing div.container blocks in main.css with this */
-.container {
+    width: 100%;
     max-width: 1100px;
     margin: var(--spacing-lg) auto;
     padding: var(--spacing-xl);
+    box-sizing: border-box;
     background-color: var(--color-surface);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
-    text-align: center; /* Aligns text professionally to the left */
 }
+
+
+/* Navigation */
 
 div.container.nav-content {
-  display: flex;             /* Enables Flexbox */
-    justify-content: space-between; /* Puts your name on the left and the menu on the right */
-    align-items: center;  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-div.container.nav-content a{
-    display: flex;             /* Turns the list items horizontal */
-    list-style-type: none;     /* Removes the bullet markers */
-    gap: 1rem;                 /* Adds space between your links */
-    padding: 0
+
+.nav-content a {
+    display: flex;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+div.container{
+  text-align: center;
+}
+
+
+/* Navigation */
+div.container.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-content ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-content li {
+    list-style: none;
+}
+
+.nav-content a {
+    text-decoration: none;
+    display: block;
 }
 
 
-li{
-    list-style-type: none;
+
+/* Progress Bar */
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background-color: var(--color-accent);
+    z-index: 9999;
 }
 
-article.card{
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-1g);
-    padding-bottom: var(--spacing-lg);
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.2s, box-shadow 0.2s;
-    margin-bottom: var(--spacing-lg);
-    margin-left: 1rem;
-}
 
+/* Headers */
 
 h2.header {
     text-align: center;
@@ -204,75 +103,175 @@ h2.header {
     margin-bottom: var(--spacing-lg);
     padding-top: 5rem;
 }
+
+
+/* Cards */
+
+article.card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: var(--spacing-lg);
+}
+
+
+/* Profile Image */
+
 img.profile-pic {
-    display: block;          /* Makes the image a block element */
-    margin: var(--spacing-lg) auto; /* Centers the image horizontally */
-    border-color: var(--color-accent); /* Optional: adds a border color */
-    border-width: 4px;       /* Optional: sets the border width */
-    border-style: solid;     /* Optional: sets the border style */ 
-/* Increase this value to make the picture larger */
-    width: 400px; 
-    
-    /* Alternatively, use max-width to keep it responsive */
+    display: block;
+    margin: var(--spacing-lg) auto;
+    border: 4px solid var(--color-accent);
+    width: 400px;
     max-width: 100%;
 }
 
 
+/* Skills */
 
-div.container.nav-content {
-  display: flex;             /* Enables Flexbox */
-    justify-content: space-between; /* Puts your name on the left and the menu on the right */
-    align-items: center;  
-}
-div.container.nav-content a{
-display: inline;             /* Makes the list items sit side-by-side */
-    list-style-type: none;     /* Removes the bullet markers */
-    gap: 2rem;                 /* Adds space between the links */
-    padding: 1rem;                /* Removes default browser padding */
-    margin: 0;    /* Removes the bullet markers */
-
+.skills {
+    justify-content: left;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0;
 }
 
-
-li{
-    list-style-type: none;
-    display: inline;
+ul.skills-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin: 0;
 }
 
-article.card{
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--spacing-1g);
-    padding-bottom: var(--spacing-lg);
-    box-shadow: var(--shadow-sm);
-    transition: transform 0.2s, box-shadow 0.2s;
-    margin-bottom: var(--spacing-lg);
-    margin-left: 1rem;
+.skills li {
+    display: list-item;
+    list-style-type: disc;
+    margin-left: 20px;
 }
 
 
-#progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%; /* Initial width */
-  height: 5px; /* Adjust thickness */
-  background-color: var(--color-accent); /* Matches your site's accent color */
-  z-index: 9999; /* Ensures it stays on top of other content */
-}
-
-h2.header {
-    text-align: center;
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
-    padding-top: 5rem;
-}
+/* Footer Links */
 
 ul.footer-links {
     display: flex;
     justify-content: center;
-    gap: 1rem; /* Adjust spacing between links */
-    padding: 1rem; /* Remove default padding */
-    margin: 0; /* Remove default margin */
+    gap: 1rem;
+    padding: 1rem;
+    margin: 0;
+}
+
+
+/* Resume Page */
+
+.container-resume-page {
+    max-width: 800px;
+    margin: var(--spacing-xl) auto;
+    background-color: var(--color-surface);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.resume-page {
+    max-width: 800px;
+    margin-top: var(--spacing-lg);
+}
+
+.resume-header {
+    border-bottom: 2px solid var(--color-accent);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+}
+
+.resume-header h1 {
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-xs);
+}
+
+.entry {
+    margin-bottom: var(--spacing-lg);
+    break-inside: avoid;
+}
+
+.entry h3 {
+    margin-bottom: 0;
+    font-size: var(--font-size-lg);
+}
+
+.meta {
+    color: var(--color-text-muted);
+    font-weight: bold;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+
+/* PRINT STYLES */
+
+@media print {
+
+    @page {
+        margin: 1cm 0.5cm 1cm 2cm;
+    }
+
+
+    .site-nav,
+    .site-footer {
+        display: none !important;
+    }
+
+
+    .resume-page {
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        float: none !important;
+    }
+
+
+    .container-resume-page {
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        padding-left: 5rem !important;
+    }
+
+
+    .entry {
+        margin-bottom: 0.75rem;
+        break-inside: avoid;
+    }
+
+
+    .entry h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.2rem;
+    }
+
+
+    .meta {
+        font-size: 0.9rem;
+    }
+
+
+    .resume-page p,
+    .resume-page li {
+        text-align: justify;
+        hyphens: auto;
+        orphans: 3;
+        widows: 3;
+    }
+
+
+    /* Show URLs only when printing */
+    a[href]:not([href^="#"])::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+
+
+    .resume-header {
+        print-color-adjust: exact;
+    }
 }
