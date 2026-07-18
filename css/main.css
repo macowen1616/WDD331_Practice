@@ -80,15 +80,14 @@
 @media print {
   /* Define page margins to prevent edge cut-off */
   @page {
-    margin: 1cm;
+    margin: 1cm 0.5cm 1cm 2cm;
+    
   }
 
-  /* Hide interactive site elements */
-  .site-header, .theme-menu { 
+  /* Hide navigation and footer elements */
+  .site-nav, .site-footer { 
     display: none !important; 
   }
-
-  
 
   /* Center the resume container on the paper */
   .resume-page { 
@@ -96,6 +95,29 @@
     margin: 0 auto !important; 
     float: none !important;
   }
+  
+  .container-resume-page {
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    padding-left: 5rem !important; /* Adjust left padding for print */
+  }
+
+  .entry {
+    margin-bottom: 0.75rem;       /* Reduce space between job entries */
+  }
+
+  .entry h3 {
+    font-size: 1.1rem;            /* Make job titles slightly smaller */
+    margin-bottom: 0.2rem;
+  }
+
+  .meta {
+    font-size: 0.9rem;            /* Adjust meta info (dates) */
+  }
+
+  /* ... rest of your print styles ... */
+}
   
   /* Prevent single orphan/widow lines */
   .resume-page p, .resume-page li {
@@ -120,8 +142,19 @@
   .resume-header { 
     print-color-adjust: exact; 
   }
-}
 
+.skills{
+    justify-content: left;
+    gap: 1rem; /* Adjust spacing between links */
+    padding: 1rem; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+ul.skills-list {
+    list-style-type: disc; /* Use disc bullets for skills */
+    padding-left: 1.5rem;  /* Indent the list */
+    margin: 0;             /* Remove default margin */
+    display: block;          /* Use flexbox for layout */
+}
 
 
 /* Replace your existing div.container blocks in main.css with this */
