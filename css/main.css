@@ -50,9 +50,6 @@ li {
     list-style: none;
 }
 
-div.container{
-  text-align: center;
-}
 
 
 /* Navigation */
@@ -61,6 +58,12 @@ div.container.nav-content {
     justify-content: space-between;
     align-items: center;
 }
+
+div.container{
+    text-align: center;
+    margin: 0 auto;
+}
+
 
 .nav-content ul {
     display: flex;
